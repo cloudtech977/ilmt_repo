@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<IBM>
+<CIT>
+<XSE version="1.0">
+<Plugins>
+<Plugin name="FSScanner">
+<Attribute name="includeDirectory" value="$local::*"/>
+
+<Attribute name="excludeDirectory" value="/proc"/>
+<Attribute name="excludeDirectory" value="*/tmp"/>
+<Attribute name="excludeDirectory" value="*/eznim"/>
+<Attribute name="excludeDirectory" value="*/unicore/lib/*"/>
+<Attribute name="excludeDirectory" value="*/perl/lib/*"/>
+<Attribute name="excludeDirectory" value="*/perl5/*"/>
+<Attribute name="excludeDirectory" value="/usr/src/kernels/*"/>
+
+<Attribute name="excludeDirectory" value="/var/opt/BESClient/LMT/CIT/docker/images"/>
+<Attribute name="excludeDirectory" value="*/work/docker_scan/images"/>
+<Attribute name="excludeDirectory" value="/var/lib/docker"/>
+<Attribute name="excludeDirectory" value="/var/spool/pkg"/>
+<Attribute name="excludeGuestDirectories" value="true"/>
+<Attribute name="maxDataAge" value="1440"/>
+<Attribute name="provider" value="provider_cache2"/>
+<Attribute name="maxQueryTime" value="43200"/>
+<Attribute name="interruptOnTimeout" value="true"/>
+<Attribute name="assumeAutoFS" value="remote"/>
+<Attribute name="extensionToCache" value="*.swidtag"/>
+<Attribute name="extensionToCache" value="*.slmtag"/>
+</Plugin>
+</Plugins>
+</XSE>
+</CIT>
+</IBM>

@@ -1,0 +1,8 @@
+# This file allows you for defining values of your custom computer properties.
+# If the particular property was defined on the "Management: Computer Properties"
+# panel, its value from this file will be displayed in the License Metric Tool
+# server after the import of scan results data.
+#
+# Provide the properties in the YAML format, for example:
+#
+# Test Property 1: Property Value

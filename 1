@@ -1,0 +1,26 @@
+---
+- name: ILMT Disconnect Scanner Setup 
+  hosts: server7
+  become: yes
+  
+
+  tasks:
+    - name: Create IBM directory 
+      file:
+        path: /opt/ibm/LMT
+        state: directory
+        mode: "0755"
+
+
+    - name: copy the ILMT disconnect files to the  remote server
+      copy:
+        src: /home/ansible/LMT/
+        dest: /opt/ibm/LMT/
+#        remote_src: yes
+
+    - name: Setup the ILMT disconnect environment
+      script: /opt/ibm/LMT/setup.sh
+
+
+
+

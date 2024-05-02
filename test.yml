@@ -1,0 +1,10 @@
+---
+- name: Copy files to remote hosts
+  hosts: server7
+  become: yes  # Optionally, if copying to privileged locations
+  
+  tasks:
+    - name: Copy files
+      copy:
+        src: /path/to/local/files/*  # Source directory on the Ansible control node
+        dest: /path/to/remote/destination/  # Destination directory on the remote hosts

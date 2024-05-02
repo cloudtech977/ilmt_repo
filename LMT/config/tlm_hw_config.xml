@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<IBM xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="citcli.xsd">
+	<CIT>
+		<Hardware priority="low" version="1.0" noTimeStamp="true">
+			<Group Name="ComponentID"/>
+			<Group Name="PhysicalProcessor" IncludeAttributes="Manufacturer,Family,Type,CorePerPackageCount,ActiveProcessorCount,Brandname"/>
+			<Group Name="Operating System" IncludeAttributes="Name,Type,MajorVersion,MinorVersion,SubVersion,OSArch,OSKernelMode"/>
+			<Group Name="LogicalDomains" IncludeAttributes="Name,HostId,LdomIsActive,CoreCount,LdomIsControl"/>
+			<Group Name="VirtualMachineGuest" IncludeAttributes="HypervisorType,UUID,CapacityInCores,RsetID,RsetCpuCount"/>
+			<Group Name="VirtualMachine" IncludeAttributes="Name,VirtualMachineID,VirtualCPUs,State,CpusConfigured,SharedPoolID,SharedPoolCapacityInCores,Type"/>
+			<Group Name="VirtualLayer"/>
+			<Group Name="Lpar" ExcludeAttributes="LparOnlinePackageCount,LparOnlineCoreCount"/>
+			<Group Name="IP Address" />
+		</Hardware>
+	</CIT>
+</IBM>

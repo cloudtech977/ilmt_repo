@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<IBM>
+<CIT>
+<FSScan version="1.0">
+<IncludeDirectory value="$local::*"/>
+
+<ExcludeDirectory value="/proc"/>
+<ExcludeDirectory value="*/tmp"/>
+<ExcludeDirectory value="*/eznim"/>
+<ExcludeDirectory value="*/unicore/lib/*"/>
+<ExcludeDirectory value="*/perl/lib/*"/>
+<ExcludeDirectory value="*/perl5/*"/>
+<ExcludeDirectory value="/usr/src/kernels/*"/>
+
+<ExcludeDirectory value="/var/opt/BESClient/LMT/CIT/docker/images"/>
+<ExcludeDirectory value="*/work/docker_scan/images"/>
+<ExcludeDirectory value="/var/lib/docker"/>
+<ExcludeDirectory value="/var/spool/pkg"/>
+<ExcludeGuestDirectories value="true"/>
+<FileMask value="*.swidtag" />
+<ExtensionToCache value="*.swidtag" />
+<ExtensionToCache value="*.slmtag" />
+<Age value="1440"/>
+<Timeout value="43200"/>
+<Provider value="provider_cache2"/>
+<AssumeAutoFS value="remote"/>
+</FSScan>
+</CIT>
+</IBM>

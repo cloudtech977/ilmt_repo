@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SoftwareIdentity name="IBM License Metric Tool" tagId="ibm.com-af8bdad9d11a454d9de505e4fb967ce4-9.2.30.0" version="9.2.30.0" versionScheme="multipartnumeric" xmlns="http://standards.iso.org/iso/19770/-2/2015/schema.xsd" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://standards.iso.org/iso/19770/-2/2015-current/schema.xsd schema.xsd" xml:lang="en">
+    <Meta persistentId="af8bdad9d11a454d9de505e4fb967ce4"/>
+    <Meta generator="4-1-20161221"/>
+    <Entity name="IBM" regid="ibm.com" role="licensor tagCreator softwareCreator"/>
+    <Meta revision="20221213-1111"/>
+</SoftwareIdentity>

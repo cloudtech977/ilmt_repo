@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Licensed Materials - Property of IBM
+	TIVOCIT00
+	Copyright IBM Corp. 2005-2011. All Rights Reserved.
+	US Government Users Restricted Rights - Use, duplication or
+	disclosure restricted by GSA ADP Schedule contract with
+	IBM Corp. -->
+<IBM xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="citcli.xsd">
+	<CIT>
+	<!-- Configuration section for wscanvpd. -->
+	<Vpd version="1.0" priority="normal" cpuThreshold="0:0:0:0">
+		<!-- Plugins configuration -->        
+		<Plugins>		
+			<Plugin name="I5OsPlugin" version="1.0">
+				<Attribute name="defaultLibs" value="*ALL"/>
+			</Plugin>
+		</Plugins>
+
+		<!-- Data providers -->        
+		<DataProviders>
+			<!-- 
+			Current supported packages list by BFI are:
+			AIXPackage
+			RPMPackage (CIT supports it on Linux and AIX)
+			SunPackage
+			Windows and MacOS are currently supported by CustomPackage than was added for i5 platform 
+			-->
+			
+			<!-- Aix data-providers -->
+			<DataProvider name="AIX" platform="AIX" listOperand="AixProductList" infoOperand="AixProductInfo" type="product"/>
+			<DataProvider name="AIXRPM" platform="AIX" listOperand="RpmProductList" infoOperand="RpmProductInfo" type="product"/>
+			<!-- i5/OS data-providers -->            
+			<DataProvider name="I5OSPRODUCT" platform="I5OS" listOperand="I5OsProductList" infoOperand="I5OsProductInfo" type="product"/>
+			<!-- Linux data-providers -->            
+			<DataProvider name="LINUX" platform="LINUX" listOperand="RpmProductList" infoOperand="RpmProductInfo" type="product"/>
+			<!-- MACOS providers -->
+			<DataProvider name="MACPRODUCT" platform="MACOS" listOperand="MacProductList" infoOperand="MacProductInfo" type="product"/>
+			<!-- Solaris data-providers -->            
+			<DataProvider name="SOLARIS" platform="SOLARIS" listOperand="SunProductList" infoOperand="SunProductInfo" type="product"/>
+			<!-- Windows data-providers -->            
+			<DataProvider name="MSI" platform="WINDOWS" listOperand="MsiProductList" infoOperand="MsiProductInfo" type="product"/>
+			<DataProvider name="WINPROGRAM" platform="WINDOWS" listOperand="WinProgramList" infoOperand="WinProgramInfo" type="product"/>
+		</DataProviders>
+
+		<!-- Configuration section for XML output -->
+		<Xml>
+			<TableGroup>
+				<!-- AIX packages -->
+				<Table name="AIXPackage" version="1.0">
+					<DataProviderLinks>
+						<DataProviderLink name="AIX"/>
+					</DataProviderLinks>
+					<Columns>
+						<Column name="Vendor" infoName="##value('(none)')##"/>
+						<Column name="Name" infoName="name"/>
+						<Column name="Version" infoName="version"/>
+						<Column name="Description" infoName="description"/>
+					</Columns>
+				</Table>
+				<Table name="RPMPackage" version="1.0">
+					<DataProviderLinks>
+						<DataProviderLink name="AIXRPM"/>
+					</DataProviderLinks>
+					<Columns>
+						<Column name="Vendor" infoName="vendor"/>
+						<Column name="Name" infoName="name"/>
+						<Column name="Version" infoName="version"/>
+						<Column name="Description" infoName="description"/>
+					</Columns>
+				</Table>
+				<!-- I5 packages -->
+				<Table name="CustomPackage" version="1.0">
+					<DataProviderLinks>
+						<DataProviderLink name="I5OSPRODUCT"/>
+					</DataProviderLinks>
+					<Columns>
+						<Column name="Vendor" infoName="vendor"/>
+						<Column name="Name" infoName="name"/>
+						<Column name="Version" infoName="version"/>
+						<Column name="Description" infoName="description"/>
+					</Columns>
+				</Table>
+				<!-- Linux packages -->
+				<Table name="RPMPackage" version="1.0">
+					<DataProviderLinks>
+						<DataProviderLink name="LINUX"/>
+					</DataProviderLinks>
+					<Columns>
+						<Column name="Vendor" infoName="vendor"/>
+						<Column name="Name" infoName="name"/>
+						<Column name="Version" infoName="version"/>
+						<Column name="Description" infoName="description"/>
+					</Columns>
+				</Table>
+				<!-- MACPRODUCT packages -->
+				<Table name="CustomPackage" version="1.0">
+					<DataProviderLinks>
+						<DataProviderLink name="MACPRODUCT"/>
+					</DataProviderLinks>
+					<Columns>
+						<Column name="Vendor" infoName="vendor"/>
+						<Column name="Name" infoName="name"/>
+						<Column name="Version" infoName="version"/>
+						<Column name="Description" infoName="description"/>
+					</Columns>
+				</Table>
+				<!-- Oracle/Solaris packages -->
+				<Table name="SunPackage" version="1.0">
+					<DataProviderLinks>
+						<DataProviderLink name="SOLARIS"/>
+					</DataProviderLinks>
+					<Columns>
+						<Column name="Vendor" infoName="vendor"/>
+						<Column name="Name" infoName="name"/>
+						<Column name="Version" infoName="displayVersion"/>
+						<Column name="Description" infoName="description"/>
+					</Columns>
+				</Table>
+				<!-- WINDOWS packages -->
+				<Table name="CustomPackage" version="1.0">
+					<DataProviderLinks>
+						<DataProviderLink name="WINPROGRAM"/>
+					</DataProviderLinks>
+					<Columns>
+						<Column name="Vendor" infoName="vendor"/>
+						<Column name="Name" infoName="name"/>
+						<Column name="Version" infoName="version"/>
+						<Column name="Description" infoName="description"/>
+					</Columns>
+				</Table>
+				<Table name="CustomPackage" version="1.0">
+					<DataProviderLinks>
+						<DataProviderLink name="MSI"/>
+					</DataProviderLinks>
+					<Columns>
+						<Column name="Vendor" infoName="vendor"/>
+						<Column name="Name" infoName="name"/>
+						<Column name="Version" infoName="version"/>
+						<Column name="Description" infoName="description"/>
+					</Columns>
+				</Table>
+			</TableGroup>
+		</Xml>
+
+	</Vpd>
+</CIT>
+</IBM>
